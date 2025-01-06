@@ -2,7 +2,7 @@
 
 <walkthrough-tutorial-duration duration="10"></walkthrough-tutorial-duration>
 
-This tutorial will guide you through the deploy of required infrastructure of Falcon Cloud Security on GCP project.
+This tutorial will guide you to deploy the required infrastructure of Falcon Cloud Security on GCP project.
 
 ## Automated Configuration
 

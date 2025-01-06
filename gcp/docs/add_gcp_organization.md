@@ -2,7 +2,7 @@
 
 <walkthrough-tutorial-duration duration="10"></walkthrough-tutorial-duration>
 
-This tutorial will guide you through the deploy of required infrastructure of Falcon Cloud Security on GCP organization.
+This tutorial will guide you to deploy the required infrastructure of Falcon Cloud Security on GCP organization.
 
 ## Automated Configuration
 
@@ -125,7 +125,7 @@ To complete the deployment process, once the key has been created, follow the st
 
 1. Go to Falcon Console > Cloud security > Settings > Account registration.
 2. Select GCP, click on the "Add new account" button and select "Register GCP organizations" and click Next.
-3. Enter the GCP project numbers you want to add to Falcon.
+3. Enter the GCP organization IDs you want to add to Falcon.
 4. Select the "Create service account and upload key file" option.
 5. Download the crowdstrike-cspm.json key file from cloud shell terminal.
 6. Upload the .json key file we've created for our service account on GCP and click Next.
