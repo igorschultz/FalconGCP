@@ -69,18 +69,10 @@ gcloud services enable cloudasset.googleapis.com cloudresourcemanager.googleapis
 * firebasedatabase.instances.list
 * cloudfunctions.functions.sourceCodeGet
 
-Option A: To create a custom role at the project level, execute the following command:
+To create a custom role at the project level, execute the following command:
 
 ```sh
 gcloud iam roles create FalconCspmAccess --description="Role used to grant access from Falcon Cloud Security to GCP resources" --project=<walkthrough-project-id/> --permissions=resourcemanager.projects.get,cloudasset.assets.exportResource,cloudasset.assets.listResource,cloudasset.assets.searchAllIamPolicies,cloudasset.assets.searchAllResources,cloudasset.assets.exportIamPolicy,appengine.versions.get,firebase.clients.list,firebase.projects.get,firebaseappcheck.services.get,firebaseauth.configs.get,firebasedatabase.instances.list,cloudfunctions.functions.sourceCodeGet
-```
-
-OR
-
-Option B: To create a custom role at the organization level, execute the following command:
-
-```sh
-gcloud iam roles create FalconCspmAccess --description="Role used to grant access from Falcon Cloud Security to GCP resources" --organization=<ORGANIZATION_ID> --permissions=resourcemanager.projects.get,resourcemanager.folders.get,cloudasset.assets.exportResource,cloudasset.assets.listResource,cloudasset.assets.searchAllIamPolicies,cloudasset.assets.searchAllResources,cloudasset.assets.exportIamPolicy,appengine.versions.get,firebase.clients.list,firebase.projects.get,firebaseappcheck.services.get,firebaseauth.configs.get,firebasedatabase.instances.list,cloudfunctions.functions.sourceCodeGet
 ```
 
 --------------------------------
@@ -101,20 +93,10 @@ gcloud iam service-accounts keys create crowdstike-cspm.json --iam-account=crowd
 
 ### Step 5: Grant CrowdStrike service account access to the project by binding the previously created role
 
-If you created a project-level role on step 2, run this command:
-
 ```sh
-gcloud projects add-iam-policy-binding <walkthrough-project-id/> \
+gcloud alpha projects add-iam-policy-binding <walkthrough-project-id/> \
   --member=serviceAccount:crowdstike-cspm@<walkthrough-project-id/>.iam.gserviceaccount.com \
   --role="projects/<walkthrough-project-id/>/roles/FalconCspmAccess"
-```
-
-If you created an organization-level role on step 2, run this command:
-
-```sh
-gcloud projects add-iam-policy-binding <walkthrough-project-id/> \
-  --member=serviceAccount:crowdstike-cspm@<walkthrough-project-id/>.iam.gserviceaccount.com \
-  --role="organizations/$ORG_ID/roles/FalconCspmAccess"
 ```
 
 --------------------------------

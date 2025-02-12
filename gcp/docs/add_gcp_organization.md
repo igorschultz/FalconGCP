@@ -69,15 +69,7 @@ gcloud services enable cloudasset.googleapis.com cloudresourcemanager.googleapis
 * firebasedatabase.instances.list
 * cloudfunctions.functions.sourceCodeGet
 
-Option A: To create a custom role at the project level, execute the following command:
-
-```sh
-gcloud iam roles create FalconCspmAccess --description="Role used to grant access from Falcon Cloud Security to GCP resources" --project=<walkthrough-project-id/> --permissions=resourcemanager.projects.get,cloudasset.assets.exportResource,cloudasset.assets.listResource,cloudasset.assets.searchAllIamPolicies,cloudasset.assets.searchAllResources,cloudasset.assets.exportIamPolicy,appengine.versions.get,firebase.clients.list,firebase.projects.get,firebaseappcheck.services.get,firebaseauth.configs.get,firebasedatabase.instances.list,cloudfunctions.functions.sourceCodeGet
-```
-
-OR
-
-Option B (Recommended): To create a custom role at the organization level, execute the following command:
+ To create a custom role at the organization level, execute the following command:
 
 ```sh
 gcloud iam roles create FalconCspmAccess --description="Role used to grant access from Falcon Cloud Security to GCP resources" --organization=$ORG_ID --permissions=resourcemanager.projects.get,resourcemanager.folders.get,cloudasset.assets.exportResource,cloudasset.assets.listResource,cloudasset.assets.searchAllIamPolicies,cloudasset.assets.searchAllResources,cloudasset.assets.exportIamPolicy,appengine.versions.get,firebase.clients.list,firebase.projects.get,firebaseappcheck.services.get,firebaseauth.configs.get,firebasedatabase.instances.list,cloudfunctions.functions.sourceCodeGet
@@ -103,16 +95,10 @@ gcloud iam service-accounts keys create crowdstike-cspm.json --iam-account=crowd
 
 If you created a project-level role on step 2, run this command:
 
-```sh
-gcloud organizations add-iam-policy-binding $ORG_ID \
-  --member=serviceAccount:crowdstike-cspm@<walkthrough-project-id/>.iam.gserviceaccount.com \
-  --role="projects/<walkthrough-project-id/>/roles/FalconCspmAccess"
-```
-
 If you created an organization-level role on step 2, run this command:
 
 ```sh
-gcloud organizations add-iam-policy-binding $ORG_ID \
+gcloud alpha organizations add-iam-policy-binding $ORG_ID \
   --member=serviceAccount:crowdstike-cspm@<walkthrough-project-id/>.iam.gserviceaccount.com \
   --role="organizations/$ORG_ID/roles/FalconCspmAccess"
 ```

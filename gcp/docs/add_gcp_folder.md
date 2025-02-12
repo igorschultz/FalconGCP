@@ -100,7 +100,7 @@ gcloud iam service-accounts keys create crowdstike-cspm.json --iam-account=crowd
 If you created a project-level role on step 2, run this command:
 
 ```sh
-gcloud resource-manager folders add-iam-policy-binding <folder-id> \
+gcloud alpha resource-manager folders add-iam-policy-binding <folder-id> \
   --member=serviceAccount:crowdstike-cspm@<walkthrough-project-id/>.iam.gserviceaccount.com \
   --role="projects/<walkthrough-project-id/>/roles/FalconCspmAccess"
 ```
@@ -108,7 +108,7 @@ gcloud resource-manager folders add-iam-policy-binding <folder-id> \
 If you created an organization-level role on step 2, run this command:
 
 ```sh
-gcloud resource-manager folders add-iam-policy-binding <folder-id> \
+gcloud alpha resource-manager folders add-iam-policy-binding <folder-id> \
   --member=serviceAccount:crowdstike-cspm@<walkthrough-project-id/>.iam.gserviceaccount.com \
   --role="organizations/$ORG_ID/roles/FalconCspmAccess"
 ```
