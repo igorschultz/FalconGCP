@@ -72,7 +72,7 @@ gcloud services enable cloudasset.googleapis.com cloudresourcemanager.googleapis
  To create a custom role at the organization level, execute the following command:
 
 ```sh
-gcloud iam roles create FalconCspmAccess --description="Role used to grant access from Falcon Cloud Security to GCP resources" --organization=$ORG_ID --permissions=resourcemanager.projects.get,resourcemanager.folders.get,cloudasset.assets.exportResource,cloudasset.assets.listResource,cloudasset.assets.searchAllIamPolicies,cloudasset.assets.searchAllResources,cloudasset.assets.exportIamPolicy,appengine.versions.get,firebase.clients.list,firebase.projects.get,firebaseappcheck.services.get,firebaseauth.configs.get,firebasedatabase.instances.list,cloudfunctions.functions.sourceCodeGet
+gcloud iam roles create FalconCspmAccess --description="Role used to grant access from Falcon Cloud Security to GCP resources" --project=$GCP_PROJECT_ID --permissions=alloydb.clusters.list,alloydb.clusters.get,alloydb.instances.list,alloydb.users.list,alloydb.backups.list,alloydb.backups.get,apigee.organizations.get,apigee.organizations.list,apigee.instances.list,apigee.apiproducts.list,appengine.versions.get,resourcemanager.projects.get,resourcemanager.folders.get,cloudasset.assets.exportResource,cloudasset.assets.listResource,cloudasset.assets.searchAllIamPolicies,cloudasset.assets.searchAllResources,cloudasset.assets.exportIamPolicy,cloudfunctions.functions.sourceCodeGet,dataplex.lakes.get,dataplex.lakes.list,firebase.clients.list,firebase.projects.get,firebaseappcheck.services.get,firebaseauth.configs.get,firebasedatabase.instances.list,aiplatform.metadataStores.get,aiplatform.metadataStores.list,aiplatform.notebookExecutionJobs.get,aiplatform.notebookExecutionJobs.list,aiplatform.notebookRuntimes.get,aiplatform.notebookRuntimes.list,aiplatform.pipelineJobs.get,aiplatform.pipelineJobs.list,aiplatform.schedules.get
 ```
 
 --------------------------------
@@ -92,10 +92,6 @@ gcloud iam service-accounts keys create crowdstike-cspm.json --iam-account=crowd
 ```
 
 ### Step 5: Grant CrowdStrike service account access to the project by binding the previously created role
-
-If you created a project-level role on step 2, run this command:
-
-If you created an organization-level role on step 2, run this command:
 
 ```sh
 gcloud alpha organizations add-iam-policy-binding $ORG_ID \

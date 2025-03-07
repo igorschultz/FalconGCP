@@ -23,19 +23,41 @@ resource "google_organization_iam_custom_role" "falcon_cspm_access_role" {
   description = "Role used to grant access from Falcon Cloud Security to GCP resources"
   title       = "falcon-cspm-access-role"
   permissions = [
+    "alloydb.clusters.list",
+    "alloydb.clusters.get",
+    "alloydb.instances.list",
+    "alloydb.users.list",
+    "alloydb.backups.list",
+    "alloydb.backups.get",
+    "apigee.organizations.get",
+    "apigee.organizations.list",
+    "apigee.instances.list",
+    "apigee.apiproducts.list",
+    "appengine.versions.get",
     "resourcemanager.projects.get",
+    "resourcemanager.folders.get",
     "cloudasset.assets.exportResource",
     "cloudasset.assets.listResource",
     "cloudasset.assets.searchAllIamPolicies",
     "cloudasset.assets.searchAllResources",
     "cloudasset.assets.exportIamPolicy",
-    "appengine.versions.get",
+    "cloudfunctions.functions.sourceCodeGet",
+    "dataplex.lakes.get",
+    "dataplex.lakes.list",
     "firebase.clients.list",
     "firebase.projects.get",
     "firebaseappcheck.services.get",
     "firebaseauth.configs.get",
     "firebasedatabase.instances.list",
-    "cloudfunctions.functions.sourceCodeGet"
+    "aiplatform.metadataStores.get",
+    "aiplatform.metadataStores.list",
+    "aiplatform.notebookExecutionJobs.get",
+    "aiplatform.notebookExecutionJobs.list",
+    "aiplatform.notebookRuntimes.get",
+    "aiplatform.notebookRuntimes.list",
+    "aiplatform.pipelineJobs.get",
+    "aiplatform.pipelineJobs.list",
+    "aiplatform.schedules.get"
   ]
 }
 
