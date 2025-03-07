@@ -57,7 +57,8 @@ resource "google_organization_iam_custom_role" "falcon_cspm_access_role" {
     "aiplatform.notebookRuntimes.list",
     "aiplatform.pipelineJobs.get",
     "aiplatform.pipelineJobs.list",
-    "aiplatform.schedules.get"
+    "aiplatform.schedules.get",
+    "notebooks.instances.get"
   ]
 }
 
