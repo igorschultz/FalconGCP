@@ -31,7 +31,7 @@ gcloud config set project <walkthrough-project-id/>
 ```
 
 ```sh
-ORG_ID=$(gcloud organizations list --format 'value(ID)')
+PROJECT_ID=$(gcloud config list --format 'value(core.project)' 2> /dev/null) && echo $PROJECT_ID
 ```
 
 ### Step 1: Enable the following GCP APIs
