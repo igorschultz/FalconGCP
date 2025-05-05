@@ -43,11 +43,20 @@ PROJECT_ID=$(gcloud config list --format 'value(core.project)' 2> /dev/null) && 
 * Compute Engine API
 * Cloud Logging API
 * Cloud Functions API
+* Apigee API
+* Notebooks API
+* Vertex AI API
+* AlloyDB API
+* Dataplex API
+* DataStream Viewer API
+* Cloud Memorystore Memcached Viewer API
+* Cloud Memorystore Redis Viewer API
+* Security Center Admin Viewer API
 
 Enable required GCP APIs by the following command:
 
 ```sh
-gcloud services enable cloudasset.googleapis.com cloudresourcemanager.googleapis.com appengine.googleapis.com sqladmin.googleapis.com compute.googleapis.com logging.googleapis.com firebase.googleapis.com cloudfunctions.googleapis.com --project <walkthrough-project-id/>
+gcloud services enable cloudasset.googleapis.com cloudresourcemanager.googleapis.com appengine.googleapis.com sqladmin.googleapis.com compute.googleapis.com logging.googleapis.com firebase.googleapis.com cloudfunctions.googleapis.com apigee.googleapis.com notebooks.googleapis.com aiplatform.googleapis.com alloydb.googleapis.com dataplex.googleapis.com datastream.googleapis.com memcache.googleapis.com redis.googleapis.com securitycenter.googleapis.com --project <walkthrough-project-id/>
 ```
 
 --------------------------------
@@ -72,7 +81,7 @@ gcloud services enable cloudasset.googleapis.com cloudresourcemanager.googleapis
 To create a custom role at the project level, execute the following command:
 
 ```sh
-gcloud iam roles create FalconCspmAccess --description="Role used to grant access from Falcon Cloud Security to GCP resources" --project=$PROJECT_ID --permissions=alloydb.clusters.list,alloydb.clusters.get,alloydb.instances.list,alloydb.users.list,alloydb.backups.list,alloydb.backups.get,apigee.organizations.get,apigee.organizations.list,apigee.instances.list,apigee.apiproducts.list,appengine.versions.get,resourcemanager.projects.get,cloudasset.assets.exportResource,cloudasset.assets.listResource,cloudasset.assets.searchAllIamPolicies,cloudasset.assets.searchAllResources,cloudasset.assets.exportIamPolicy,cloudfunctions.functions.sourceCodeGet,dataplex.lakes.get,dataplex.lakes.list,firebase.clients.list,firebase.projects.get,firebaseappcheck.services.get,firebaseauth.configs.get,firebasedatabase.instances.list,aiplatform.metadataStores.get,aiplatform.metadataStores.list,aiplatform.notebookExecutionJobs.get,aiplatform.notebookExecutionJobs.list,aiplatform.notebookRuntimes.get,aiplatform.notebookRuntimes.list,aiplatform.pipelineJobs.get,aiplatform.pipelineJobs.list,aiplatform.schedules.get,notebooks.instances.get
+gcloud iam roles create FalconCspmAccess --description="Role used to grant access from Falcon Cloud Security to GCP resources" --project=$PROJECT_ID --permissions=alloydb.clusters.list,alloydb.clusters.get,alloydb.instances.list,alloydb.users.list,alloydb.backups.list,alloydb.backups.get,apigee.organizations.get,apigee.organizations.list,apigee.instances.list,apigee.apiproducts.list,appengine.versions.get,resourcemanager.projects.get,resourcemanager.folders.get,cloudasset.assets.exportResource,cloudasset.assets.listResource,cloudasset.assets.searchAllIamPolicies,cloudasset.assets.searchAllResources,cloudasset.assets.exportIamPolicy,cloudfunctions.functions.sourceCodeGet,dataplex.lakes.get,dataplex.lakes.list,firebase.clients.list,firebase.projects.get,firebaseappcheck.services.get,firebaseauth.configs.get,firebasedatabase.instances.list,aiplatform.metadataStores.get,aiplatform.metadataStores.list,aiplatform.notebookExecutionJobs.get,aiplatform.notebookExecutionJobs.list,aiplatform.notebookRuntimes.get,aiplatform.notebookRuntimes.list,aiplatform.pipelineJobs.get,aiplatform.pipelineJobs.list,aiplatform.schedules.get,aiplatform.locations.list,aiplatform.notebookRuntimeTemplates.get,aiplatform.notebookRuntimeTemplates.list,aiplatform.datasets.get,aiplatform.datasets.list,notebooks.instances.get,memcache.instances.get,memcache.instances.list,redis.clusters.get,redis.clusters.list,redis.instances.get,redis.instances.list,compute.instances.list,compute.instanceGroups.get,datastream.streams.get,datastream.streams.list,essentialcontacts.contacts.list,essentialcontacts.contacts.get,recommender.iamPolicyRecommendations.get,recommender.iamPolicyRecommendations.list,recommender.iamPolicyLateralMovementInsights.get,recommender.iamPolicyLateralMovementInsights.list,securitycenter.organizationsettings.get
 ```
 
 --------------------------------

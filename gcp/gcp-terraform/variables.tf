@@ -21,6 +21,15 @@ variable "gcpServicesList" {
     "sqladmin.googleapis.com",
     "compute.googleapis.com",
     "logging.googleapis.com",
-    "cloudfunctions.googleapis.com"
+    "cloudfunctions.googleapis.com",
+    "apigee.googleapis.com",
+    "notebooks.googleapis.com",
+    "aiplatform.googleapis.com",
+    "alloydb.googleapis.com",
+    "dataplex.googleapis.com",
+    "datastream.googleapis.com",
+    "memcache.googleapis.com",
+    "redis.googleapis.com",
+    "securitycenter.googleapis.com"
   ]
 }
