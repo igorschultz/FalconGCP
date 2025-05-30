@@ -24,6 +24,11 @@ projectID=$(gcloud config list --format 'value(core.project)' 2> /dev/null)
 echo $projectID
 ```
 
+```sh
+projectNumber=$(gcloud projects describe $projectID --format='value(projectNumber)')
+echo $projectNumber
+```
+
 ### Configure Terraform Variables
 
 Specify the following fields in <walkthrough-editor-open-file filePath="terraform.tfvars">terraform.tfvars</walkthrough-editor-open-file> and apply the Terraform template in the Cloud Shell:
