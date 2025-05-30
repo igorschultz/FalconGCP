@@ -47,5 +47,5 @@ For Terraform:
 
 | Deployment Type | Link |
 |:--| :--|
-| **Register an Organization** | [![Terraform Deployment](https://gstatic.com/cloudssh/images/open-btn.svg)](https://shell.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Figorschultz%2FFalconGCP.git&cloudshell_workspace=gcp/gcp-terraform&cloudshell_tutorial=docs/register_organization_terraform.md) |
+| **Register an Organization** | [![Terraform Deployment](https://gstatic.com/cloudssh/images/open-btn.svg)](https://shell.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Figorschultz%2FFalconGCP.git&cloudshell_workspace=gcp/gcp-terraform&cloudshell_tutorial=docs/register-organization-terraform.md) |
 | **Register a Project** | [![Terraform Deployment](https://gstatic.com/cloudssh/images/open-btn.svg)](https://shell.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Figorschultz%2FFalconGCP.git&cloudshell_workspace=gcp/gcp-terraform&cloudshell_tutorial=docs/register-project-terraform.md) |
